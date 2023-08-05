@@ -8,6 +8,10 @@ import { ScreenHeaderBtn, NearbyJobCard } from '../../components'
 import { COLORS, icons, SIZES } from '../../constants'
 import styles from '../../styles/search'
 
+import { RAPID_API_KEY_NEW } from 'react-native-dotenv' 
+
+const rapidApiKey = RAPID_API_KEY_NEW
+
 const JobSearch = () => {
     const params = useSearchParams();
     const router = useRouter()
@@ -26,7 +30,7 @@ const JobSearch = () => {
                 method: "GET",
                 url: `https://jsearch.p.rapidapi.com/search`,
                 headers: {
-                    "X-RapidAPI-Key": 'e288371b29mshbd0e59cd238ed43p1cd9a7jsn060482fbd4ea',
+                    "X-RapidAPI-Key": rapidApiKey,
                     "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
                 },
                 params: {
